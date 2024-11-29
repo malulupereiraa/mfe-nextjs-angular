@@ -27,11 +27,9 @@ module.exports = {
       ...sharedMappings.getAliases(),
     }
   },
-  experiments: {
-    outputModule: true,
-  },
   plugins: [
     new ModuleFederationPlugin({
+
       name: "mfeAngular",
       filename: "remoteEntry.js",
       exposes: {

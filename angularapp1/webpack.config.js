@@ -32,11 +32,20 @@ module.exports = {
 
       name: "mfeAngular",
       filename: "remoteEntry.js",
+      library: { type: 'var', name: 'mfeAngular' },
       exposes: {
-        './AppComponent': './src/app/app.component.ts',
+        './App': './src/app/app.component.ts',
+        // './AppComponent': './src/bootstrap.ts',
       },
       shared: {
-        ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+        "@angular/core": { singleton: true },
+        "@angular/common": { singleton: true },
+        "@angular/common/http": { singleton: true },
+        "@angular/router": { singleton: true },
+
+        // Uncomment for sharing lib of an Angular CLI or Nx workspace
+        ...sharedMappings.getDescriptors(),
+        // ...shareAll({ eager: true, singleton: true, strictVersion: true, requiredVersion: 'auto' }),
       },
 
     }),

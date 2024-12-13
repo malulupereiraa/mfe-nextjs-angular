@@ -1,1 +1,3 @@
 # mfe-nextjs-angular
+
+POC em desenvolvimento...
